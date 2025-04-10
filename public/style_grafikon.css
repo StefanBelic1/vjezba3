@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+body {
+    font-family: 'Abel', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.grafikon {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.grafikon h1 {
+    color: darkblue;
+    font-size: 2rem;
+    font-weight: 100;
+    margin-bottom: 30px;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Pie Chart (defaultno za veće ekrane) */
+.pie-chart {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #e74c3c 0% 40%,    /* Indija - 40% */
+        #3498db 40% 65%,   /* SAD - 25% */
+        #2ecc71 65% 80%,   /* Kina - 15% */
+        #f1c40f 80% 90%,   /* Nigerija - 10% */
+        #9b59b6 90% 95%,   /* Japan - 5% */
+        #ecf0f1 95% 100%   /* Ostali - 5% */
+    );
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Bar Chart (sakriven defaultno) */
+.bar-chart {
+    display: none; /* Sakriven na većim ekranima */
+    width: 100%;
+    max-width: 500px;
+    height: 200px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    margin: 0 auto;
+}
+
+.bar {
+    flex: 1;
+    height: calc(var(--percent) * 2px); /* Visina proporcionalna postotku */
+    background-color: #e74c3c; /* Default boja, mijenja se po klasi */
+    border-radius: 5px 5px 0 0;
+    transition: height 0.3s ease;
+}
+
+.bar.india { background-color: #e74c3c; }
+.bar.usa { background-color: #3498db; }
+.bar.china { background-color: #2ecc71; }
+.bar.nigeria { background-color: #f1c40f; }
+.bar.japan { background-color: #9b59b6; }
+.bar.others { background-color: #ecf0f1; border: 1px solid #34495e; }
+
+/* Legenda */
+.legend {
+    margin-top: 20px;
+}
+
+.legend ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    justify-items: center;
+}
+
+.legend li {
+    display: flex;
+    align-items: center;
+    color: #34495e;
+    font-size: 1rem;
+}
+
+.legend .color {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.legend .india { background-color: #e74c3c; }
+.legend .usa { background-color: #3498db; }
+.legend .china { background-color: #2ecc71; }
+.legend .nigeria { background-color: #f1c40f; }
+.legend .japan { background-color: #9b59b6; }
+.legend .others { background-color: #ecf0f1; border: 1px solid #34495e; }
+
+
+@media (max-width: 767px) {
+    .pie-chart {
+        display: none; 
+    }
+
+    .bar-chart {
+        display: flex; 
+    }
+
+    .chart-container {
+        max-width: 400px;
+    }
+
+    .bar {
+        height: calc(var(--percent) * 1.5px); 
+    }
+
+    .legend ul {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
+
+@media (min-width: 768px) {
+    .bar-chart {
+        display: none; 
+    }
+
+    .pie-chart {
+        display: block; 
+    }
+}

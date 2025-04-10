@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+body {
+    font-family: 'Abel', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.galerija h1 {
+    color: darkblue;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 100;
+}
+
+.img-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+.galerija_slika {
+    position: relative;
+    overflow: hidden;
+}
+
+.galerija_slika img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.galerija_slika:hover img {
+    transform: scale(1.05); 
+}
+
+.galerija_slika figcaption {
+    text-align: center;
+    color: #34495e;
+    margin-top: 5px;
+}
+
+.galerija_slika a {
+    cursor: pointer; 
+    text-decoration: none;
+}

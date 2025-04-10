@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafikon - Države s najviše filmova</title>
+    <link rel="stylesheet" href="style_grafikon.css">
+</head>
+<body>
+    <section class="grafikon">
+        <h1>Države s najviše proizvedenih filmova</h1>
+        <div class="chart-container" aria-label="Grafikon prikaz država s najviše filmova">
+            <div class="pie-chart"></div>
+            <div class="bar-chart">
+                <div class="bar india" style="--percent: 40;" aria-label="Indija: 40%"></div>
+                <div class="bar usa" style="--percent: 25;" aria-label="SAD: 25%"></div>
+                <div class="bar china" style="--percent: 15;" aria-label="Kina: 15%"></div>
+                <div class="bar nigeria" style="--percent: 10;" aria-label="Nigerija: 10%"></div>
+                <div class="bar japan" style="--percent: 5;" aria-label="Japan: 5%"></div>
+                <div class="bar others" style="--percent: 5;" aria-label="Ostali: 5%"></div>
+            </div>
+            <div class="legend">
+                <ul>
+                    <li><span class="color india"></span> Indija (40%)</li>
+                    <li><span class="color usa"></span> SAD (25%)</li>
+                    <li><span class="color china"></span> Kina (15%)</li>
+                    <li><span class="color nigeria"></span> Nigerija (10%)</li>
+                    <li><span class="color japan"></span> Japan (5%)</li>
+                    <li><span class="color others"></span> Ostali (5%)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
