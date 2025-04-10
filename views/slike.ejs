@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerija slika - Filmoviplex</title>
+    <link rel="stylesheet" href="style_slike.css">
+</head>
+<body>
+    <section class="galerija">
+        <h1>Galerija slika</h1>
+        <div class="img-gallery">
+            <% images.forEach((image, index) => { %>
+                <figure class="galerija_slika" id="slika<%= index + 1 %>">
+                    <a href="<%= image.url %>" target="_blank" title="<%= image.title %>">
+                        <img src="<%= image.url %>" alt="<%= image.title %>">
+                    </a>
+                    <figcaption><%= image.title %></figcaption>
+                </figure>
+            <% }); %>
+        </div>
+    </section>
+</body>
+</html>
